@@ -1,7 +1,7 @@
 from __future__ import print_function
 import os
 
-from pyvcs.process import execute, proxy_command
+from pylib.process import execute, proxy_command
 
 class Git(object):
     def __init__(self, cwd=None):
