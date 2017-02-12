@@ -1,3 +1,12 @@
+############################################################
+#
+# pyvcs.git_util
+# Copyright (C) 2017, Richard Cook
+# Release under MIT License
+# https://github.com/rcook/pyvcs
+#
+############################################################
+
 from __future__ import print_function
 import os
 
