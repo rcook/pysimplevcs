@@ -27,6 +27,7 @@ setup(
     author_email="rcook@rcook.org",
     license="MIT",
     packages=["pysimplevcs"],
+    install_requires=["pyprelude>=0.2"],
     include_package_data=True,
     test_suite="pysimplevcs.tests.suite",
     zip_safe=False)

@@ -9,9 +9,9 @@
 
 from __future__ import print_function
 import os
+from pyprelude.process import execute
 
 from .git import Git
-from .process import execute
 
 def git_init(repo_dir):
     if os.path.isdir(repo_dir):
