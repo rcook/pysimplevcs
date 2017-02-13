@@ -1,6 +1,6 @@
-# pyvcs
+# pysimplevcs
 
-Wrappers around `git` and `hg` commands etc.
+Simple wrappers around `git` and `hg` commands etc.
 
 ## Licence
 

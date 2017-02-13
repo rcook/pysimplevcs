@@ -1,16 +1,16 @@
 ############################################################
 #
-# pyvcs.hg
+# pysimplevcs.hg
 # Copyright (C) 2017, Richard Cook
 # Release under MIT License
-# https://github.com/rcook/pyvcs
+# https://github.com/rcook/pysimplevcs
 #
 ############################################################
 
 from __future__ import print_function
 import os
 
-from pylib.process import execute, proxy_command
+from pyprelude.process import execute, proxy_command
 
 class Hg(object):
     def __init__(self, cwd=None):

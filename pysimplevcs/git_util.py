@@ -1,17 +1,17 @@
 ############################################################
 #
-# pyvcs.git_util
+# pysimplevcs.git_util
 # Copyright (C) 2017, Richard Cook
 # Release under MIT License
-# https://github.com/rcook/pyvcs
+# https://github.com/rcook/pysimplevcs
 #
 ############################################################
 
 from __future__ import print_function
 import os
 
-from pyvcs.git import Git
-from pyvcs.process import execute
+from .git import Git
+from .process import execute
 
 def git_init(repo_dir):
     if os.path.isdir(repo_dir):

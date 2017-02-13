@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 ############################################################
 #
-# pyvcs
+# pysimplevcs
 # Copyright (C) 2017, Richard Cook
 # Release under MIT License
-# https://github.com/rcook/pyvcs
+# https://github.com/rcook/pysimplevcs
 #
 ############################################################
 
@@ -12,7 +12,7 @@ from __future__ import print_function
 from setuptools import setup
 
 setup(
-    name="pyvcs",
+    name="pysimplevcs",
     version="0.1",
     description="Python helpers for interacting with VCSs",
     setup_requires=["setuptools-markdown"],
@@ -22,11 +22,11 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 2.7",
     ],
-    url="https://github.com/rcook/pyvcs",
+    url="https://github.com/rcook/pysimplevcs",
     author="Richard Cook",
     author_email="rcook@rcook.org",
     license="MIT",
-    packages=["pyvcs"],
+    packages=["pysimplevcs"],
     include_package_data=True,
-    test_suite="pyvcs.tests.suite",
+    test_suite="pysimplevcs.tests.suite",
     zip_safe=False)
