@@ -2,6 +2,7 @@
 /.Python
 /.eggs/
 /bin/
+/dist/
 /include/
 /lib/
 /pip-selfcheck.json
