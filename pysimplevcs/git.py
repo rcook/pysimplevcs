@@ -42,6 +42,11 @@ class Git(object):
 
     def __getattr__(self, name):
         def _missing_method(*args, **kwargs):
-            return proxy_command(name, self._repo_dir, lambda n, args: ["git", n] + args, *args, **kwargs)
+            return proxy_command(
+                name,
+                self._repo_dir,
+                lambda n, args: ["git", n] + args,
+                *args,
+                **kwargs)
 
         return _missing_method
