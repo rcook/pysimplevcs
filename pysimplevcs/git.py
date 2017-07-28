@@ -10,6 +10,7 @@
 from __future__ import print_function
 import os
 
+from pyprelude.file_system import make_path
 from pyprelude.process import execute, proxy_command
 
 class Git(object):
@@ -26,11 +27,18 @@ class Git(object):
         else:
             self._repo_dir = execute("git", "rev-parse", "--show-toplevel", cwd=cwd).strip()
 
+        self._git_dir = \
+            self._repo_dir if self._is_bare \
+            else make_path(self._repo_dir, ".git")
+
     @property
     def is_bare(self): return self._is_bare
 
     @property
     def repo_dir(self): return self._repo_dir
+
+    @property
+    def git_dir(self): return self._git_dir
 
     def __getattr__(self, name):
         def _missing_method(*args, **kwargs):
