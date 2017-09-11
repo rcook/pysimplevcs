@@ -22,5 +22,9 @@ def git_init(*args, **kwargs):
 
 def git_clone(*args, **kwargs):
     output = _run_subcommand("clone", *args, **kwargs)
-    if len(output) != 0:
-        raise RuntimeError("git clone failed with unexpected output: {}".format(output))
+
+    lines = output.splitlines()
+    if len(lines) == 0 or len(lines) == 1 and lines[0].startswith("Cloning into"):
+        return
+
+    raise RuntimeError("git clone failed with unexpected output: {}".format(output))
