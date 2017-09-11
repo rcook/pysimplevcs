@@ -13,7 +13,7 @@ from setuptools import setup
 
 setup(
     name="pysimplevcs",
-    version="0.3",
+    version="0.4",
     description="Python helpers for interacting with VCSs",
     setup_requires=["setuptools-markdown"],
     long_description_markdown_filename="README.md",
