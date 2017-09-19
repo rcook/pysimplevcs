@@ -13,7 +13,7 @@ from setuptools import setup
 
 setup(
     name="pysimplevcs",
-    version="0.4",
+    version="0.5",
     description="Python helpers for interacting with VCSs",
     setup_requires=["setuptools-markdown"],
     long_description_markdown_filename="README.md",
@@ -27,7 +27,7 @@ setup(
     author_email="rcook@rcook.org",
     license="MIT",
     packages=["pysimplevcs"],
-    install_requires=["pyprelude>=0.2"],
+    install_requires=["pyprelude>=0.6"],
     include_package_data=True,
     test_suite="pysimplevcs.tests.suite",
     zip_safe=False)
