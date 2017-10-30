@@ -1,5 +1,7 @@
 # pysimplevcs
 
+[![View on PyPI](https://img.shields.io/pypi/v/pysimplevcs.svg)](https://pypi.python.org/pypi/pysimplevcs)
+
 Simple wrappers around `git` and `hg` commands etc.
 
 ## Licence
