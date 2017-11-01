@@ -1,9 +1,5 @@
-*.pyc
-/.Python
 /.eggs/
-/bin/
+/build/
 /dist/
-/include/
-/lib/
-/pip-selfcheck.json
 /pysimplevcs.egg-info/
+*.pyc
