@@ -17,6 +17,9 @@ from pyprelude.util import unpack_args
 
 _GIT_CAPS = None
 
+def str_execute(*args, **kwargs):
+    return execute(*args, **kwargs).decode("utf-8")
+
 def _get_git_caps():
     global _GIT_CAPS
     if _GIT_CAPS is None:
@@ -35,7 +38,7 @@ def _is_msys_git_executable(p):
     if not ON_WINDOWS:
         return False
 
-    output = execute(p, "config", "--list", "--show-origin")
+    output = str_execute(p, "config", "--list", "--show-origin")
     for line in output.splitlines():
         path = _get_config_path("file:\"", "\"", line)
         if path is not None:
@@ -56,7 +59,7 @@ class _GitCaps(object):
     def program_path(self): return self._program_path
 
     def to_native_path(self, s):
-        return execute("cygpath", "-w", s).strip() if self._is_msys_git_executable else s
+        return str_execute("cygpath", "-w", s).strip() if self._is_msys_git_executable else s
 
 class _Git(object):
     def __init__(self, caps, is_bare, repo_dir, git_dir, args):
@@ -105,7 +108,7 @@ class Git(_Git):
 
         caps = _get_git_caps()
 
-        is_bare = execute(
+        is_bare = str_execute(
             "git",
             "rev-parse",
             "--is-bare-repository",
@@ -115,7 +118,7 @@ class Git(_Git):
             repo_dir = cwd
             git_dir = repo_dir
         else:
-            repo_dir = caps.to_native_path(execute("git", "rev-parse", "--show-toplevel", cwd=cwd).strip())
+            repo_dir = caps.to_native_path(str_execute("git", "rev-parse", "--show-toplevel", cwd=cwd).strip())
             git_dir = make_path(repo_dir, ".git")
 
         super(Git, self).__init__(caps, is_bare, repo_dir, git_dir, args)
