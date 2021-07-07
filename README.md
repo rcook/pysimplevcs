@@ -5,6 +5,14 @@
 
 Simple wrappers around `git` and `hg` commands etc.
 
+## Build and publish
+
+```
+cd /path/to/pysimplevcs
+python setup.py sdist
+twine upload dist/*
+```
+
 ## Licence
 
 [MIT License][licence]
